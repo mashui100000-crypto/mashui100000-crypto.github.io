@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akuya</title>
-<meta name="description" content="Akuya 的个人主页">
+<meta name="description" content="Akuya 的个人主页 — 全网 AI 源头">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
@@ -31,13 +31,28 @@
     line-height: 1.8;
     color: #555555;
   }
-  nav {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
+  .shop { margin-top: 4.5rem; }
+  .shop h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #999999;
+    text-transform: uppercase;
   }
-  nav a {
+  .shop .tagline {
+    margin-top: 1rem;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .shop .desc {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555555;
+  }
+  .shop a {
+    margin-top: 1.8rem;
     font-size: 1.25rem;
     color: #111111;
     text-decoration: none;
@@ -48,8 +63,8 @@
     align-items: center;
     transition: color 0.2s, border-color 0.2s;
   }
-  nav a:hover { color: #666666; border-color: #111111; }
-  nav a span { font-size: 0.95rem; color: #999999; }
+  .shop a:hover { color: #666666; border-color: #111111; }
+  .shop a span { font-size: 0.95rem; color: #999999; }
   footer {
     margin-top: 4rem;
     font-size: 0.85rem;
@@ -61,11 +76,13 @@
 <body>
   <main>
     <h1>你好，<br>我是 Akuya。</h1>
-    <p class="sub">欢迎来到我的小站。<br>逛逛我的店铺，或者到别处找我。</p>
-    <nav>
-      <a href="https://wzyp.cn/shop/akuya">我的店铺 <span>wzyp.cn/shop/akuya ↗</span></a>
-      <a href="https://github.com/mashui100000-crypto">GitHub <span>mashui100000-crypto ↗</span></a>
-    </nav>
+    <p class="sub">欢迎来到我的小站。</p>
+    <section class="shop">
+      <h2>我的店铺</h2>
+      <p class="tagline">全网 AI 源头</p>
+      <p class="desc">全网 AI 好货的源头，一手货源，价格实在。<br>需要什么，进店看看。</p>
+      <a href="https://wzyp.cn/shop/akuya">进入店铺 <span>wzyp.cn/shop/akuya ↗</span></a>
+    </section>
   </main>
   <footer>akuya.loc.cc</footer>
 </body>
