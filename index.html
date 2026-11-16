@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akuya</title>
-<meta name="description" content="Akuya 的个人主页 — 全网 AI 源头">
+<title>Akuya · 阿库娅 AI 源头</title>
+<meta name="description" content="Akuya 的个人主页 — 阿库娅 AI 源头，全网 AI 好货一手货源：ChatGPT、Claude、Gemini、Muse、Notion、谷歌邮箱、即梦 AI">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
@@ -13,60 +13,118 @@
     background: #ffffff;
     color: #111111;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 9vh 8vw 6vh;
     -webkit-font-smoothing: antialiased;
   }
-  main { flex: 1; max-width: 720px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 9vh 6vw 6vh; }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #2563eb;
+    text-transform: uppercase;
+  }
   h1 {
-    font-size: clamp(2.6rem, 8vw, 4.5rem);
+    margin-top: 1.2rem;
+    font-size: clamp(2.6rem, 8vw, 4.2rem);
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.02em;
   }
   .sub {
-    margin-top: 2.5rem;
-    font-size: 1.1rem;
+    margin-top: 1.6rem;
+    font-size: 1.15rem;
     line-height: 1.8;
     color: #555555;
   }
-  .shop { margin-top: 4.5rem; }
-  .shop h2 {
+  .sub b { color: #111111; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.2rem;
+    background: #111111;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cta:hover { background: #2563eb; transform: translateY(-1px); }
+  .section-label {
+    margin-top: 4.5rem;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.2em;
     color: #999999;
     text-transform: uppercase;
   }
-  .shop .tagline {
-    margin-top: 1rem;
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
-    font-weight: 700;
-    line-height: 1.3;
+  .grid {
+    margin-top: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
   }
-  .shop .desc {
-    margin-top: 1rem;
-    font-size: 1.05rem;
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .card {
+    display: block;
+    background: #f7f7f8;
+    border: 1px solid #eeeeef;
+    border-radius: 16px;
+    padding: 1.2rem 1.1rem;
+    text-decoration: none;
+    color: #111111;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border-color: #dbe4ff;
+  }
+  .card.featured {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-color: transparent;
+    color: #ffffff;
+    grid-column: span 2;
+  }
+  @media (min-width: 640px) { .card.featured { grid-column: span 1; } }
+  .card h3 { font-size: 1.15rem; font-weight: 700; }
+  .card p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666666;
+  }
+  .card.featured p { color: rgba(255, 255, 255, 0.85); }
+  .card .meta {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    color: #999999;
+  }
+  .card.featured .meta { color: rgba(255, 255, 255, 0.75); }
+  .tag {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    background: #e8efff;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+  .card.featured .tag { color: #ffffff; background: rgba(255, 255, 255, 0.22); }
+  .notes {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
     line-height: 1.8;
     color: #555555;
+    border-top: 1px solid #eeeeef;
+    padding-top: 1.6rem;
   }
-  .shop a {
-    margin-top: 1.8rem;
-    font-size: 1.25rem;
-    color: #111111;
-    text-decoration: none;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 0.9rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .shop a:hover { color: #666666; border-color: #111111; }
-  .shop a span { font-size: 0.95rem; color: #999999; }
+  .notes b { color: #111111; }
   footer {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     font-size: 0.85rem;
     color: #aaaaaa;
     letter-spacing: 0.05em;
@@ -74,16 +132,61 @@
 </style>
 </head>
 <body>
-  <main>
+  <div class="wrap">
+    <p class="eyebrow">Akuya · 个人主页</p>
     <h1>你好，<br>我是 Akuya。</h1>
-    <p class="sub">欢迎来到我的小站。</p>
-    <section class="shop">
-      <h2>我的店铺</h2>
-      <p class="tagline">全网 AI 源头</p>
-      <p class="desc">全网 AI 好货的源头，一手货源，价格实在。<br>需要什么，进店看看。</p>
-      <a href="https://wzyp.cn/shop/akuya">进入店铺 <span>wzyp.cn/shop/akuya ↗</span></a>
-    </section>
-  </main>
-  <footer>akuya.loc.cc</footer>
+    <p class="sub">我的店铺是<b>阿库娅 AI 源头</b>，全网 AI 好货的一手货源。<br>ChatGPT、Claude、Gemini，想要的 AI 账号和充值，这里都有。</p>
+    <a class="cta" href="https://wzyp.cn/shop/akuya">进入店铺 ↗</a>
+
+    <p class="section-label">在售商品 · 60+ 种</p>
+    <div class="grid">
+      <a class="card featured" href="https://wzyp.cn/shop/akuya">
+        <h3>ChatGPT</h3>
+        <p>官方充值 · 成品号 · 接码 · 额度</p>
+        <span class="tag">可开票</span>
+        <p class="meta">15 种商品 · 联系群主免手续费</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>Claude</h3>
+        <p>官方充值 · 稳定中转站 · 成品号</p>
+        <span class="tag">可开票</span>
+        <p class="meta">18 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>Gemini</h3>
+        <p>充值 · 成品号</p>
+        <p class="meta">13 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>Muse</h3>
+        <p>账号相关商品</p>
+        <p class="meta">4 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>谷歌邮箱</h3>
+        <p>成品邮箱</p>
+        <p class="meta">2 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>Notion</h3>
+        <p>账号相关商品</p>
+        <p class="meta">2 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>即梦 AI</h3>
+        <p>账号相关商品</p>
+        <p class="meta">4 种商品</p>
+      </a>
+      <a class="card" href="https://wzyp.cn/shop/akuya">
+        <h3>更多好货</h3>
+        <p>其他 AI 商品，持续上新</p>
+        <p class="meta">4 种商品</p>
+      </a>
+    </div>
+
+    <p class="notes"><b>放心买：</b>部分商品可开票，GPT 官方充值联系群主免手续费。<br>进店挑选，下单后按店铺指引完成，售后找群主。</p>
+
+    <footer>akuya.loc.cc</footer>
+  </div>
 </body>
 </html>
